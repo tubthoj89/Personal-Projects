@@ -1,0 +1,72 @@
+﻿@model Calculator.Models.CalculationVM
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="form">
+        <div class="col-xs-12">
+            @using (@Html.BeginForm("AddCalculation", "Home", FormMethod.Post))
+            {
+                <div class="col-xs-8">
+                    <h2>Calculator</h2>
+                    <div class="col-xs-8 row" style="margin-bottom: 10px">
+                        @*<input class="form-control" type="text" id="Result" style="width: 190px;" disabled />*@
+                        @Html.TextBoxFor(c => c.Calculation.MathCal, new { @class = "form-control", @style = "width: 190px", @id = "Result" })
+                    </div>
+                    <div class="row" style="margin-top: 25px">
+                        <div class="col-xs-8">
+                            @*@Html.ActionLink("1", null, null,null, new { @class = "btn btn-primary btn-lg", @style = "height: 45px; width: 45px", @onclick = "Result.value += '1'", @type = "button" })*@
+                            <button type="button" onclick="Result.value += '1'" value="1" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">1</button>
+                            <button type="button" onclick="Result.value += '2'" value="2" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">2</button>
+                            <button type="button" onclick="Result.value += '3'" value="3" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">3</button>
+                            <button type="button" onclick="Result.value += '/'" value="/" class="btn btn-success btn-lg" style="height: 45px; width: 45px">/</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-xs-8">
+                            <button type="button" onclick="Result.value += '4'" value="4" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">4</button>
+                            <button type="button" onclick="Result.value += '5'" value="5" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">5</button>
+                            <button type="button" onclick="Result.value += '6'" value="6" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">6</button>
+                            <button type="button" onclick="Result.value += '*'" value="*" class="btn btn-success btn-lg" style="height: 45px; width: 45px">*</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-xs-8">
+                            <button type="button" onclick="Result.value += '7'" value="7" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">7</button>
+                            <button type="button" onclick="Result.value += '8'" value="8" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">8</button>
+                            <button type="button" onclick="Result.value += '9'" value="9" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">9</button>
+                            <button type="button" onclick="Result.value += '-'" value="-" class="btn btn-success btn-lg" style="height: 45px; width: 45px">-</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-xs-8">
+                            <button type="button" onclick="Result.value += '0'" value="0" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">0</button>
+                            <button type="button" onclick="Result.value += '.'" value="." class="btn btn-primary btn-lg" style="height: 45px; width: 45px">.</button>
+                            <button type="reset" value="C" class="btn btn-primary btn-lg" style="height: 45px; width: 45px">C</button>
+                            <button type="button" onclick="Result.value += '+'" value="+" class="btn btn-success btn-lg" style="height: 45px; width: 45px">+</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-danger btn-lg" style="width: 190px">=</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-9" style="margin-top: 10px">
+                    <h2>Last 10 Calculations</h2>
+                    <div id="calculationHistory"></div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/LoadHistory.js"></script>
