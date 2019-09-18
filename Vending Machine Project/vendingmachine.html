@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<!-- <meta charset="utf-8"/> -->
+    <head>
+      <title>Vending Machine</title>
+      <link href="css/bootstrap.css"
+            rel="stylesheet">
+    </head>
+    <body>
+      <div class="container">
+        <h1 class="text-center">Vending Machine</h1>
+        <hr/>
+        <div class="row">
+          <div class="col-md-7" id="itemColum">
+            <div id="allRows">
+            <div class="row">
+            <div class="col-md-4" id="snicker">
+              <button type="button"
+                  id="snicker-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(1)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id1">1</span></p>
+                  <p class="text-center"><span id="name1">Snickers</span></p>
+                  <p class="text-center">$<span id="price1">1.50</span></p>
+                  <p class="text-center" >Quantity: <span id="quan1">10</span></p>
+                </button>
+              </div>
+          <div class="col-md-4" id="mm">
+            <button type="button"
+                  id="mm-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(2)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id2">2</span></p>
+                  <p class="text-center"><span id="name2">M & M's</span></p>
+                  <p class="text-center">$<span id="price2">1.25</span></p>
+                  <p class="text-center" >Quantity: <span id="quan2">8</span></p>
+            </button>
+        </div>
+        <div class="col-md-4" id="almondjoy">
+          <button type="button"
+                  id="almondjoy-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(3)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id3">3</span></p>
+                  <p class="text-center"><span id="name3">Almond Joy</span></p>
+                  <p class="text-center">$<span id="price3">1.25</span></p>
+                  <p class="text-center" >Quantity: <span id="quan3">11</span></p>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" id="milkyway">
+          <button type="button"
+                  id="milkyway-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(4)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id4">4</span></p>
+                  <p class="text-center"><span id="name4">Milky Way</span></p>
+                  <p class="text-center">$<span id="price4">1.65</span></p>
+                  <p class="text-center" >Quantity: <span id="quan4">3</span></p>
+          </button>
+        </div>
+        <div class="col-md-4" id="payday">
+          <button type="button"
+                  id="payday-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(5)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id5">5</span></p>
+                  <p class="text-center"><span id="name5">Payday</span></p>
+                  <p class="text-center">$<span id="price5">1.75</span></p>
+                  <p class="text-center" >Quantity: <span id="quan5">2</span></p>
+          </button>
+        </div>
+        <div class="col-md-4" id="reeses">
+          <button type="button"
+                  id="reeses-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(6)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id6">6</span></p>
+                  <p class="text-center"><span id="name6">Reese's</span></p>
+                  <p class="text-center">$<span id="price6">1.50</span></p>
+                  <p class="text-center" >Quantity: <span id="quan6">5</span></p>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" id="pringles">
+          <button type="button"
+                  id="pringles-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(7)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id7">7</span></p>
+                  <p class="text-center"><span id="name7">Pringles</span></p>
+                  <p class="text-center">$<span id="price7">2.35</span></p>
+                  <p class="text-center">Quantity: <span id="quan7">4</span></p>
+          </button>
+        </div>
+        <div class="col-md-4" id="cheezits">
+          <button type="button"
+                  id="cheezits-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(8)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id8">8</span></p>
+                  <p class="text-center"><span id="name8">Cheezits</span></p>
+                  <p class="text-center">$<span id="price8">2.00</span></p>
+                  <p class="text-center" >Quantity: <span id="quan8">6</span></p>
+          </button>
+        </div>
+        <div class="col-md-4" id="doritos">
+          <button type="button"
+                  id="doritos-button"
+                  class="btn btn-default"
+                  value=""
+                  onclick="setItem(9)"
+                  style="background-color: white; border: 1px solid black; width: 150px; height: 150px; margin: 50px 25px 0px 0px;">
+                  <p class="text-left"><span id="id9">9</span></p>
+                  <p class="text-center"><span id="name9">Doritos</span></p>
+                  <p class="text-center">$<span id="price9">1.95</span></p>
+                  <p class="text-center" >Quantity: <span id="quan9">7</span></p>
+          </button>
+        </div>
+      </div>
+      </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <h2 class="center" id="total">Total $ In</h2>
+          <div id="form-amount">
+        <form>
+            <input type="text" placeholder="$0.00" id="moneyinput" disabled/>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <button type="button"
+                id="dollar-button"
+                class="btn btn-default"
+                value=""
+                style="background-color: white; border: 1px solid black; width: 120px; height: 30px; margin: 5px 10px 0px 0px;">
+                <p class="text-center">Add Dollar</p>
+        </button>
+        </div>
+        <div class="col-md-4">
+          <button type="button"
+                  id="quarter-button"
+                  class="btn btn-default"
+                  value=""
+                  style="background-color: white; border: 1px solid black; width: 120px; height: 30px; margin: 5px 10px 0px 0px;">
+                  <p class="text-center">Add Quarter</p>
+          </button>
+        </div>
+        <div class="col-md-4">
+          <button type="button"
+                  id="dime-button"
+                  class="btn btn-default"
+                  value=""
+                  style="background-color: white; border: 1px solid black; width: 120px; height: 30px; margin: 5px 10px 0px 0px;">
+                  <p class="text-center">Add Dime</p>
+          </button>
+        </div>
+          <div class="col-md-4">
+            <button type="button"
+                    id="nickel-button"
+                    class="btn btn-default"
+                    value=""
+                    style="background-color: white; border: 1px solid black; width: 120px; height: 30px; margin: 5px 10px 0px 0px;">
+                    <p class="text-center">Add Nickel</p>
+            </button>
+        </div>
+          <hr/>
+
+          <div id="message" class="col-md-4">
+          <h2 class="center" id="message-title">Messages</h2>
+        <form>
+            <input type="text" placeholder="" id="messages-input" disabled/>
+        </form>
+        <h2 class="float-left" id="item-title">Items</h2>
+        <div id="item">
+      <form class="float-left">
+          <input type="text" placeholder="" id="item-input" disabled/>
+      </form>
+    </div>
+      <div id="purchase">
+        <button type="button"
+                id="purchase-button"
+                class="btn btn-default"
+                style="background-color: white; border: 1px solid black; width: 120px; height: 30px; margin: 5px 10px 0px 0px;">
+                <p class="text-center">Purchase</p>
+        </button>
+      </div>
+    </div>
+      <hr/>
+
+      <div class="col-md-4" id="changes">
+        <h2 id="changes-title">Changes</h2>
+        <form>
+            <input type="text" placeholder="$0.00" id="changes-input" style="width: 300px; height: 25px; margin: 5px 10px 0px 0px;" disabled/>
+        </form>
+        <div id="changesReturn">
+        <button type="button"
+                id="changes-button"
+                class="btn btn-default"
+                style="background-color: white; border: 1px solid black; width: 120px; height: 30px; margin: 5px 10px 0px 0px;">
+                <p class="text-center">Change</p>
+        </button>
+        </div>
+      </div>
+        </div>
+      </div>
+      </div>
+          <script src="js/jquery-2.2.4.min.js"></script>
+          <script src="js/bootstrap.js"></script>
+          <script src="js/vendingmachine.js"></script>
+    </body>
+</html>
