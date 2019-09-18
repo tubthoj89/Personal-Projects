@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dvd Library</title>
+        <link href="css/bootstrap.css"
+            rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+                <ul class="list-group" id="errorMessages"></ul>
+            <div class="DisplayDVD">
+                    <div class="col-md-10">
+                            <buttton type="button" class="btn btn-outline-dark" id="create" >Create Dvd</buttton>       
+                           <buttton type="button" class="btn btn-outline-dark" id="searchDvd" >Search</buttton>
+                           <select id="Select">
+                                   <option value="" selected="selected">Search Category</option>
+                                   <option value="title">Title</option>
+                                   <option value="realeaseYear">Release Year</option>
+                                   <option value="director">Director Name</option>
+                                   <option value="rating">Rating</option>
+                           </select>
+                           <input id="searchInput" type="text" placeholder="Search Input">
+                       </div>
+                       <hr/>
+                       <div class="col-md-12">
+                            <table style="width:100%">
+                                    
+                           <tr>
+                               <th>ID</th>
+                               <th>Title</th>
+                               <th>Released Date</th>
+                               <th>Director</th>
+                               <th>Rating</th>
+                               <th>Edit Option</th>
+                               <th>Delete Option</th>
+                           </tr>
+                           <tbody id="movieTable">
+                           </tbody>
+                       </table>
+                       </div>
+            </div>
+
+            <div class="EditDVD" id="EditDiv">
+                    <div class="row">
+                            <div class="col-md-12">
+                                <h1>Edit DVD: A Great Tale</h1>
+                                <hr/>
+                                <div class="form-group">
+                                    <label for="Edittitleinput">DVD Title:</label>
+                                    <div class="col-md-8">
+                                            <input class="form-control" id="Edit-title" 
+                                            type="text" placeholder="Title" required>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="Editreleaseinput">Release Year:</label>
+                                    <div class="col-md-8">
+                                            <input class="form-control" id="Edit-release" 
+                                            type="number" placeholder="Release" required>
+                                    </div>
+                                    
+                                </div> 
+                                
+                                <div class="form-group">
+                                    <label for="Edit-director">Director:</label>
+                                    <div class="col-md-8">
+                                            <input class="form-control" id="Edit-director" 
+                                            type="text" placeholder="deirector" required>
+                                    </div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label for="Edit-Rating">Rating:</label>
+                                    <div class="col-md-8">
+                                            <select id="Edit-rating" required>
+                                                    <option id="EditratingselectG" selected>G</option>
+                                                    <option id="EditratingselectPG">PG</option>
+                                                    <option id="EditratingselectPG13">PG-13</option>
+                                            </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Edit-Note">Notes</label>
+                                    <div class="col-md-8">
+                                            <input class="form-control" id="Edit-Note" type="text" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <div class="col-md-offset-4 col-md-4">
+                                        <input type="hidden" id="dvdId">
+                                        <buttton type="button" class="btn btn-outline-dark" 
+                                        id="Edit-cancel" >Cancel
+                                    </buttton>
+                                        </div>
+                                </div>
+                                       
+                                <div class="col-md-4">
+                                        <buttton type="button" class="btn btn-outline-dark" 
+                                        id="Edit-save" >Save
+                                    </buttton>
+                                </div>
+                            
+                            </div>
+                        </div>
+            </div>
+            
+
+                <div class="CreateDVD" id="CreateDiv">
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <h1>Create DVD</h1>
+                                    <hr/>
+                                    <div class="form-group">
+                                            <label for="Create-title">DVD Title:</label>
+                                            <div class="col-md-8">
+                                                    <input class="form-control" id="Create-title" 
+                                                    type="text" placeholder="Title" required>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Create-release">Release Year:</label>
+                                            <div class="col-md-8">
+                                                    <input class="form-control" id="Create-release" 
+                                                    type="number" placeholder="Release" required>
+                                            </div>
+                                            
+                                        </div> 
+                                        
+                                        <div class="form-group">
+                                            <label for="Create-director">Director:</label>
+                                            <div class="col-md-8">
+                                                    <input class="form-control" id="Create-director" 
+                                                    type="text" placeholder="director" required>
+                                            </div>
+                                        </div> 
+        
+                                        <div class="form-group">
+                                            <label for="Create-Rating">Rating:</label>
+                                            <div class="col-md-8">
+                                                    <select id="Create-Rating" required>
+                                                            <option id="CreateratingselectG" selected>G</option>
+                                                            <option id="CreateratingselectPG">PG</option>
+                                                            <option id="CreateratingselectPG13">PG-13</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="Create-Note">Notes</label>
+                                            <div class="col-md-8">
+                                                    <input class="form-control" id="Create-Note" type="text" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                                <div class="col-md-offset-4 col-md-4">
+                                                <buttton type="button" class="btn btn-outline-dark" 
+                                                id="Create-cancel" >Cancel
+                                            </buttton>
+                                                </div>
+                                        </div>
+                                               
+                                        <div class="col-md-4">
+                                                <buttton type="button" class="btn btn-outline-dark" 
+                                                id="create-Create" >Create DVD
+                                            </buttton>
+                                        </div>
+                            </div>
+                </div>
+            
+            
+            <div class="SuccessDVD">
+                    <div class="row">
+                            <div class="col-md-12">
+                                <h1 id="Success"></h1>
+                                <hr/>
+                                <div class="form-group">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Success-release">Release Year:</label>
+                                        <div class="col-md-8">
+                                                <input class="form-control" id="Success-release" 
+                                                type="number" placeholder="Release" disabled>
+                                        </div>
+                                        
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label for="Success-director">Director:</label>
+                                        <div class="col-md-8">
+                                                <input class="form-control" id="Success-director" 
+                                                type="text" placeholder="director" disabled>
+                                        </div>
+                                    </div> 
+    
+                                    <div class="form-group">
+                                        <label for="Success-Rating">Rating:</label>
+                                        <div class="col-md-8">
+                                                <div class="col-md-8">
+                                                        <input class="form-control" id="Success-rating" 
+                                                        type="text" placeholder="director" disabled>
+                                                </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <label for="Create-Note">Notes</label>
+                                        <div class="col-md-8">
+                                                <input class="form-control" id="Success-Note" type="text" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                            <div class="col-md-offset-4 col-md-4">
+                                                    <input type="hidden" id="Success-dvdId">
+                                            <buttton type="button" class="btn btn-outline-dark" 
+                                            id="Success-back" >Back
+                                        </buttton>
+                                            </div>
+                                    </div>
+                        </div>
+            </div>
+            
+        </div>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>
+    </body>
+</html>
